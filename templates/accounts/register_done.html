@@ -1,0 +1,15 @@
+{% extends 'global/base.html' %}
+
+{% block title %} Registro Éxitoso {% endblock title %}
+
+{% block content %}
+<div class="card">
+  <h3 class="card-header">¡Registro Éxitoso!</h3>
+  <div class="card-block">
+    <h4 class="card-title">Hola {{request.user.get_short_name}}!.</h4>
+    <p class="card-text">¡Muchas gracias por registrarte y formar parte de la comunidad de Bukio,
+      espero que este sitio sea de tu agrado, se despide  <i>Miguel Toledano</i>!.</p>
+    <a href="{% url 'login' %}" class="btn btn-primary">Iniciar Sesión</a>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'global/base.html' %}
+
+{% block title %}Ingresa a tu cuenta{% endblock title %}
+
+{% block content %}
+<div class="modal-dialog">
+    <div class="loginmodal-container">
+        <h1>Ingresa a tu cuenta</h1><br>
+        <form role="form" action="." method="post">
+            {% csrf_token %}
+            <p>
+              <label for="id_username">E-mail:</label>
+              <input type="email" name="username" class="form-control" autofocus maxlength="254" required id="id_username" />
+            </p>
+            <p>
+                <label for="id_password">Contraseña:</label>
+                <input type="password" class="form-control" name="password" required id="id_password" />
+            </p>
+            <input type="submit" name="login" class="btn btn-primary" value="Iniciar Sesión"></input>
+        </form>
+        <div class="login-help">
+            <a href="{% url 'register' %}">Registrate</a> - <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
